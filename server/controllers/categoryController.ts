@@ -45,8 +45,7 @@ export const getCategories = async (req: Request, res: Response) : Promise<void>
         res.json({ success: true, categories});
     } catch (error: any){
         console.error("getCategories error:", error);
-        res.status(500).json({ success: false, message: error?.message || 
-            "Failed to fetch categories"});
+        res.status(500).json({ success: false, message: "Failed to fetch categories"});
     }
 }
 
@@ -75,8 +74,7 @@ Promise<void> => {
 
     } catch (error: any) {
         console.error("getCategories error:", error);
-        res.status(500).json({ success: false, message: error?.message || 
-            "Failed to fetch category"});
+        res.status(500).json({ success: false, message: "Failed to create category"});
     }
 }
 
@@ -97,8 +95,7 @@ Promise<void> => {
         res.json({success: true, message: "Category deleted successfully"});    
     } catch (error: any) {
          console.error("getCategories error:", error);
-        res.status(500).json({ success: false, message: error?.message || 
-            "Failed to deleted category"});
+        res.status(500).json({ success: false, message: "Failed to deleted category"});
     }
 
 }
