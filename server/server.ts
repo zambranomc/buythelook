@@ -1,6 +1,7 @@
 import "dotenv/config";
 import express, { Request, Response} from 'express';
 import cors from "cors";
+import categoryRouter from "./routes/categoryRoutes.js";
 
 const app = express();
 
@@ -13,6 +14,10 @@ const port = process.env.PORT || 3000;
 app.get('/', (req: Request, res: Response) => {
     res.send('Server is Live!');
 });
+
+//API ROUTES
+app.use("/api/categories", categoryRouter)
+
 
 app.listen(port, () => {
     console.log(`Server is running at http://localhost:${port}`);
